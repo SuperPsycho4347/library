@@ -13,8 +13,16 @@
     margin-top: 10px;
 }
 
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
 .books {
     display: flex;
+    margin-top: 10px;
 }
 
 .book {

@@ -2,7 +2,6 @@ const myLibrary = [
     {title: "War And Peace", author: "Leo Tolstoy", pages: "1,225", status: "read"}
 ];
 
-// const container = document.querySelector('container');
 const books = document.querySelector('.books');
 const bookContainer = document.createElement('div');
 bookContainer.classList.add('book');
