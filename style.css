@@ -3,20 +3,20 @@
     padding: 0;
 }
 
-.container {
+body {
     display: flex;
     flex-direction: column;
 }
 
-.container .header h1 {
+.header h1 {
     text-align: center;
     margin-top: 10px;
 }
 
 .button {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     margin-top: 25px;
 }
 
