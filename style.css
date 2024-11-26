@@ -3,9 +3,21 @@
     padding: 0;
 }
 
-body {
+/* body {
+    display: flex;
+    flex-direction: column; */
+/* } */
+
+button {
+    width: 40px;
+    height: 40px;
+}
+
+.header {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header h1 {
@@ -13,16 +25,13 @@ body {
     margin-top: 10px;
 }
 
-.button {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    margin-top: 25px;
+#add-book {
+    margin-top: 20px;
 }
 
-.books {
+.books-container {
     display: flex;
-    margin-top: 10px;
+
 }
 
 .book {
