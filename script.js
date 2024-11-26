@@ -13,6 +13,22 @@ function Book(title, author, pages, status) {
     this.status = status;
 }
 
+function createBookCard() {
+    const bookCard = document.createElement('div');
+    const bookTitle = document.createElement('h2');
+    bookTitle.classList.add('book-title');
+    const bookAuthor = document.createElement('p');
+    bookAuthor.classList.add('book-author');
+    const bookPages = document.createElement('p');
+    bookPages.classList.add('book-pages');
+    const bookStatus = document.createElement('p')
+    bookStatus.classList.add('book-status')
+    bookCard.appendChild(bookTitle);
+    bookCard.appendChild(bookAuthor);
+    bookCard.appendChild(bookPages);
+    bookCard.appendChild(bookStatus);
+}
+
 function addBook() {
     
 }
