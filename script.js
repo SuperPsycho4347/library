@@ -13,7 +13,7 @@ function Book(title, author, pages, status) {
     this.status = status;
 }
 
-function createBookCard() {
+function createBookCard(newBook , bookIndex) {
     const bookCard = document.createElement('div');
     const bookTitle = document.createElement('h2');
     bookTitle.classList.add('book-title');
@@ -23,25 +23,41 @@ function createBookCard() {
     bookPages.classList.add('book-pages');
     const bookStatus = document.createElement('p')
     bookStatus.classList.add('book-status')
+
+    bookTitle.textContent = `${newBook.title};`
+    bookAuthor.textContent = `${newBook.author}`;
+    bookPages.textContent = `${newBook.pages}`;
+    bookStatus.textContent = `${newBook.status}`;
+
     bookCard.appendChild(bookTitle);
     bookCard.appendChild(bookAuthor);
     bookCard.appendChild(bookPages);
     bookCard.appendChild(bookStatus);
+
+    return bookCard;
 }
 
-function addBook() {
-    
+function addBook(newBook) {
+    const bookContainer = document.querySelector('.books-container');
+    const bookIndex = myLibrary.indexOf(newBook);
+    const newCard = createBookCard(newBook, bookIndex);
+    bookContainer.appendChild(newCard);
 }
 
 function createLibrary() {
     const baseContainer = document.createElement('div');
     baseContainer.classList.add('books-container');
+    
+    myLibrary.forEach((myBook, bookIndex) => {
+        const bookCard = createBookCard(myBook, bookIndex);
+        baseContainer.appendChild(bookCard);
+    })
+
     bodyContainer.appendChild(baseContainer);
 }
 
 // Execution
 const myLibrary = [
-    {title: "War And Peace", author: "Leo Tolstoy", pages: "1,225", status: "read"}
 ];
 
 // const books = document.querySelector('.books');
@@ -75,5 +91,18 @@ cancelBtn.addEventListener('click', (event) => {
 
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
+
+    const titleInput = document.querySelector('#title').value;
+    const authorInput = document.querySelector('#author').value;
+    const pagesInput = document.querySelector('#pages').value;
+    const statusInput = document.querySelector('#status').value;
+
+    const newBook = new Book(titleInput, authorInput, pagesInput, statusInput);
+
+    console.log('hell')
+    myLibrary.push(newBook);
+
+    addBook(newBook);
+
     addBookDialog.close();
 })
