@@ -27,7 +27,7 @@ function createBookCard(newBook , bookIndex) {
 
     bookTitle.textContent = `${newBook.title}`
     bookAuthor.textContent = `${newBook.author}`;
-    bookPages.textContent = `${newBook.pages}`;
+    bookPages.textContent = `${newBook.pages} pages`;
     bookStatus.textContent = `${newBook.status}`;
 
     bookCard.appendChild(bookTitle);
